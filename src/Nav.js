@@ -1,18 +1,20 @@
 import React from "react";
-import {Link, HashRouter} from "react-router-dom";
 
-
-const Nav = () => {
+const Nav = ({location: {pathname}}) => {
     return (
-        <HashRouter>
-        <ul>
-            <li><Link to="/">First</Link></li>
-            <li><Link to='/'>Prev</Link></li>
-            <li><Link to="/">Next</Link></li>
-            <li><Link to="/161">Last</Link></li>
+    <div>
+        <h1>Acme Users</h1>
+        <ul className = 'nav nav-tabs'>
+                <li key = 'Home'>
+                <a className = {`nav-link${'/' === pathname ? ' active': ''}`} href = '/#'>Home</a>
+                </li>
+
+                <li key = 'Users'>
+                <a className = {`nav-link${pathname.includes('/users') ? ' active': ''}`} href = '/#/users'>Users</a>
+                </li>
+            
         </ul>
-        </HashRouter>
-    );
+    </div>)
 };
 
 export default Nav;

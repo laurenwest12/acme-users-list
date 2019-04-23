@@ -8,6 +8,4 @@ app.get('/app.js', (req, res, next)=> res.sendFile(path.join(__dirname, 'dist', 
 
 app.get('/', (req, res, next)=> res.sendFile(path.join(__dirname, 'index.html')));
 
-
-
 app.listen(port, ()=> console.log(`listening on port ${port}`))
